@@ -47,6 +47,7 @@ echo "Publishing to ${GITHUB_REPOSITORY} on branch ${remote_branch}"
 echo "::debug ::Pushing to https://${JEKYLL_PAT}@github.com/${GITHUB_REPOSITORY}.git"
 
 remote_repo="https://${JEKYLL_PAT}@github.com/${GITHUB_REPOSITORY}.git" && \
+echo "git push --force $remote_repo master:$remote_branch &&" && \
 git init && \
 git config user.name "${GITHUB_ACTOR}" && \
 git config user.email "${GITHUB_ACTOR}@users.noreply.github.com" && \
